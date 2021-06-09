@@ -3,12 +3,15 @@
 const db = require("./db");
 
 const User = require("./models/user");
+const Recommendation = require("./models/recommendation");
 
-//associations could go here!
+User.hasMany(Recommendation);
+Recommendation.belongsTo(User);
 
 module.exports = {
   db,
   models: {
     User,
+    Recommendation,
   },
 };
