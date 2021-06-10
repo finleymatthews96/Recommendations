@@ -2,6 +2,7 @@ const router = require("express").Router();
 const {
   models: { User },
 } = require("../db");
+const client = require("../redis");
 module.exports = router;
 
 router.post("/login", async (req, res, next) => {
