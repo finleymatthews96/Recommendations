@@ -14,3 +14,12 @@ router.get("/", async (req, res, next) => {
     next(error);
   }
 });
+
+router.post("/", async (req, res, next) => {
+  try {
+    const recommendation = await Recommendation.create(req.body);
+    res.json(recommendation);
+  } catch (error) {
+    next(error);
+  }
+});
